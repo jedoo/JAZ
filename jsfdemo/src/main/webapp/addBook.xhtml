@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	template="/templates/default.xhtml">
+	<ui:define name="content">
+
+		<h:form id="bookForm">
+            
+			<h:panelGrid columns="2">
+
+				<h:outputText value="#{msg.bookNameLabel}" />
+				<h:inputText id="name" value="#{bookBean.book.name}" required="#{true}">
+ 					<f:validator validatorId="bookNameValidator" /> 
+				</h:inputText>
+
+				<h:outputText value="#{msg.bookBookTypeLabel}" />
+				<h:selectOneMenu id="bookTypeString" value="#{bookBean.book.bookTypeString}">
+				  <f:selectItem id="Fantasy" itemLabel="Fantasy" itemValue="Fantasy" />
+				  <f:selectItem id="History" itemLabel="History" itemValue="History" />
+				  <f:selectItem id="Criminal" itemLabel="Criminal" itemValue="Criminal" />
+				  <f:selectItem id="Thriller" itemLabel="Thriller" itemValue="Thriller" />
+				  <f:selectItem id="Biography" itemLabel="Biography" itemValue="Biography" />
+				  <f:selectItem id="Programing" itemLabel="Programing" itemValue="Programing" />
+				  <f:selectItem id="Science" itemLabel="Science" itemValue="Science" />
+				</h:selectOneMenu>
+
+				<h:outputText value="#{msg.bookAuthorLabel}" />
+				<h:inputText id="author" value="#{bookBean.book.author}" required="#{true}">
+ 					<f:validator validatorId="bookAuthorValidator" /> 
+				</h:inputText>
+				
+				<h:outputText value="#{msg.bookReleaseYearLabel}" />
+				<h:inputText id="releaseYear" value="#{bookBean.book.releaseYear}" required="#{true}" />
+
+				<h:outputText value="#{msg.bookPriceLabel}" />
+				<h:inputText id="price" value="#{bookBean.book.price}" required="#{true}" />
+				
+
+
+			</h:panelGrid>
+			
+			<h:commandButton value="#{msg.bookFormOKButton}"
+				action="#{bookBean.addBook}" />
+
+
+			<h:panelGrid>
+				<h:messages id="messages" showDetail="#{true}"
+					showSummary="#{false}" />
+			</h:panelGrid>
+		</h:form>
+
+	</ui:define>
+</ui:composition>

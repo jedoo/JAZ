@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+  <div>
+	<h:form>
+	  <ul>
+		<li>
+		  <h:commandLink action="home?faces-redirect=true">
+			<h:outputText value="#{msg.linkHome}" />
+		  </h:commandLink>
+		</li>
+		<li>
+		  <h:commandLink action="addPerson?faces-redirect=true">
+			<h:outputText value="#{msg.personAddLabel}" />
+		  </h:commandLink>
+		</li>
+		<li>
+		  <h:commandLink action="addBook?faces-redirect=true">
+			<h:outputText value="#{msg.bookAddLabel}" />
+		  </h:commandLink>
+		</li>
+		<li>
+		  <h:commandLink action="showPersons?faces-redirect=true">
+			 <h:outputText value="#{msg.personAllLabel}" />
+		  </h:commandLink>
+		</li>
+		<li>
+		  <h:commandLink action="showBooks?faces-redirect=true">
+			 <h:outputText value="#{msg.bookAllLabel}" />
+		  </h:commandLink>
+		</li>
+<!-- 
+		<li>
+		  <h:commandLink action="addBookToPerson?faces-redirect=true">
+			 <h:outputText value="#{msg.bookToPersonLabel}" />
+		  </h:commandLink>
+		</li>
+		<li>
+		  <h:commandLink action="showBookPerson?faces-redirect=true">
+			 <h:outputText value="#{msg.bookPersonLabel}" />
+		  </h:commandLink>
+		</li>
+-->
+	</ul>
+   </h:form>
+  </div>
+</ui:composition>
